@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>推薦結果</title>
+  <link rel="stylesheet" href="result.css">
+</head>
+<br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+<body>
+  <h1>您的推薦結果</h1>
+  <div class="results" id="results"></div>
+  <a href="index.html">
+    <img src="backbutton.png" alt="按鈕圖片" class="back-button">
+  </a>
+  <script>
+    // 獲取URL參數
+    const params = new URLSearchParams(window.location.search);
+    const q1 = params.get('q1');
+    const q2 = params.get('q2');
+    const q3 = params.get('q3');
+
+    let recommendations = "";
+
+    if (q1 === "A" && q2 === "A" && q3 === "A") {
+    recommendations = `
+        <h2>旅行的翼逸<br>花Happen<br>負food得正<br></h2>
+        <h3>聚焦生活便利與科技結合的應用</h3>
+    `;
+} else if (q1 === "A" && q2 === "A" && q3 === "B") {
+    recommendations = `
+        <h2>花Happen<br>負food得正<br>哩豆<br></h2>
+        <h3>偏重於實用工具與日常互動</h3>
+    `;
+} else if (q1 === "A" && q2 === "A" && q3 === "C") {
+    recommendations = `
+        <h2>媒人所<br>JOMO<br>花Happen<br></h2>
+        <h3>兼具生活與教育元素</h3>
+    `;
+} else if (q1 === "A" && q2 === "A" && q3 === "D") {
+    recommendations = `
+        <h2>Co-Sign<br>界限Boundaries<br>媒人所<br></h2>
+        <h3>社會議題與實際互動體驗</h3>
+    `;
+} else if (q1 === "A" && q2 === "B" && q3 === "A") {
+    recommendations = `
+        <h2>界限Boundaries<br>未來領航<br>用進廢退<br></h2>
+        <h3>技術探索與社會對話的結合</h3>
+    `;
+} else if (q1 === "A" && q2 === "B" && q3 === "B") {
+    recommendations = `
+        <h2>旅行的翼逸<br>負food得正<br>哩豆<br></h2>
+        <h3>聚焦生活應用與啟發思考</h3>
+    `;
+} else if (q1 === "A" && q2 === "B" && q3 === "C") {
+    recommendations = `
+        <h2>Co-Sign<br>媒人所<br>JOMO<br></h2>
+        <h3>社會與教育的深度結合</h3>
+    `;
+} else if (q1 === "A" && q2 === "B" && q3 === "D") {
+    recommendations = `
+        <h2>界限Boundaries<br>媒人所<br>Co-Sign<br></h2>
+        <h3>社會議題與技術討論</h3>
+    `;
+} else if (q1 === "A" && q2 === "C" && q3 === "A") {
+    recommendations = `
+        <h2>未來領航<br>用進廢退<br>哩豆<br></h2>
+        <h3>技術與未來趨勢</h3>
+    `;
+} else if (q1 === "A" && q2 === "C" && q3 === "B") {
+    recommendations = `
+        <h2>旅行的翼逸<br>負food得正<br>花Happen<br></h2>
+        <h3>歷史與生活應用</h3>
+    `;
+} else if (q1 === "A" && q2 === "C" && q3 === "C") {
+    recommendations = `
+        <h2>時光抱報<br>媒人所<br>JOMO<br></h2>
+        <h3>歷史與教育的結合</h3>
+    `;
+} else if (q1 === "A" && q2 === "C" && q3 === "D") {
+    recommendations = `
+        <h2>界限Boundaries<br>Co-Sign<br>媒人所<br></h2>
+        <h3>啟發性社會對話</h3>
+    `;
+} else if (q1 === "A" && q2 === "D" && q3 === "A") {
+    recommendations = `
+        <h2>用進廢退<br>未來領航<br>哩豆<br></h2>
+        <h3>聚焦未來技術探索</h3>
+    `;
+} else if (q1 === "A" && q2 === "D" && q3 === "B") {
+    recommendations = `
+        <h2>花Happen<br>負food得正<br>哩豆<br></h2>
+        <h3>日常應用與未來科技的融合</h3>
+    `;
+} else if (q1 === "A" && q2 === "D" && q3 === "C") {
+    recommendations = `
+        <h2>未來領航<br>JOMO<br>媒人所<br></h2>
+        <h3>教育與技術探索</h3>
+    `;
+} else if (q1 === "A" && q2 === "D" && q3 === "D") {
+    recommendations = `
+        <h2>用進廢退<br>界限Boundaries<br>Co-Sign<br></h2>
+        <h3>技術突破與社會議題</h3>
+    `;
+} else if (q1 === "B" && q2 === "A" && q3 === "A") {
+    recommendations = `
+        <h2>旅行的翼逸<br>花Happen<br>哩豆<br></h2>
+        <h3>聚焦科技便利與日常生活</h3>
+    `;
+} else if (q1 === "B" && q2 === "A" && q3 === "B") {
+    recommendations = `
+        <h2>負food得正<br>媒人所<br>JOMO<br></h2>
+        <h3>融合科技與教育互動</h3>
+    `;
+} else if (q1 === "B" && q2 === "A" && q3 === "C") {
+    recommendations = `
+        <h2>時光抱報<br>媒人所<br>界限Boundaries<br></h2>
+        <h3>歷史與社會議題的探索</h3>
+    `;
+} else if (q1 === "B" && q2 === "A" && q3 === "D") {
+    recommendations = `
+        <h2>Co-Sign<br>界限Boundaries<br>媒人所<br></h2>
+        <h3>技術創新與社會對話</h3>
+    `;
+} else if (q1 === "B" && q2 === "B" && q3 === "A") {
+    recommendations = `
+        <h2>用進廢退<br>未來領航<br>哩豆<br></h2>
+        <h3>技術應用與生活啟發</h3>
+    `;
+} else if (q1 === "B" && q2 === "B" && q3 === "B") {
+    recommendations = `
+        <h2>旅行的翼逸<br>花Happen<br>負food得正<br></h2>
+        <h3>日常生活與科技結合</h3>
+    `;
+} else if (q1 === "B" && q2 === "B" && q3 === "C") {
+    recommendations = `
+        <h2>媒人所<br>JOMO<br>Co-Sign<br></h2>
+        <h3>社會教育的深度聯繫</h3>
+    `;
+} else if (q1 === "B" && q2 === "B" && q3 === "D") {
+    recommendations = `
+        <h2>界限Boundaries<br>Co-Sign<br>未來領航<br></h2>
+        <h3>啟發性對話與未來探索</h3>
+    `;
+} else if (q1 === "B" && q2 === "C" && q3 === "A") {
+        recommendations = `
+            <h2>時光抱報<br>未來領航<br>用進廢退<br></h2>
+            <h3>歷史與未來技術的結合</h3>
+    `;
+} else if (q1 === "B" && q2 === "C" && q3 === "B") {
+        recommendations = `
+            <h2>哩豆<br>負food得正<br>花Happen<br></h2>
+            <h3>歷史記錄與日常應用</h3>
+    `;
+} else if (q1 === "B" && q2 === "C" && q3 === "C") {
+        recommendations =  `
+            <h2>媒人所<br>JOMO<br>未來領航<br></h2>
+            <h3>教育與文化創新發展</h3>
+    `;
+} else if (q1 === "B" && q2 === "C" && q3 === "D") {
+        recommendations =  `
+            <h2>界限Boundaries<br>Co-Sign<br>媒人所<br></h2>
+            <h3>歷史與社會多樣性的探索</h3>
+    `;
+} else if (q1 === "B" && q2 === "D" && q3 === "A") {
+        recommendations =  `
+            <h2>未來領航<br>用進廢退<br>時光抱報<br></h2>
+            <h3>聚焦歷史與技術的未來想像</h3>
+    `;
+} else if (q1 === "B" && q2 === "D" && q3 === "B") {
+        recommendations =  `
+            <h2>哩豆<br>負food得正<br>花Happen<br></h2>
+            <h3>結合歷史與生活應用</h3>
+    `;
+} else if (q1 === "B" && q2 === "D" && q3 === "C") {
+        recommendations = `
+            <h2>時光抱報<br>媒人所<br>JOMO<br></h2>
+            <h3>歷史、教育與文化的結合</h3>
+    `;
+} else if (q1 === "B" && q2 === "D" && q3 === "D") {
+        recommendations = `
+            <h2>界限Boundaries<br>Co-Sign<br>媒人所<br></h2>
+            <h3>歷史與社會對話的深層探索</h3>
+    `;
+} else if (q1 === "C" && q2 === "A" && q3 === "A") {
+    recommendations = `
+        <h2>花Happen<br>負food得正<br>哩豆<br></h2>
+        <h3>聚焦日常生活應用</h3>
+    `;
+} else if (q1 === "C" && q2 === "A" && q3 === "B") {
+    recommendations = `
+        <h2>旅行的翼逸<br>媒人所<br>JOMO<br></h2>
+        <h3>科技與教育融合</h3>
+    `;
+} else if (q1 === "C" && q2 === "A" && q3 === "C") {
+    recommendations = `
+        <h2>界限Boundaries<br>時光抱報<br>Co-Sign<br></h2>
+        <h3>歷史與社會議題探討</h3>
+    `;
+} else if (q1 === "C" && q2 === "A" && q3 === "D") {
+    recommendations = `
+        <h2>用進廢退<br>未來領航<br>媒人所<br></h2>
+        <h3>未來技術與教育結合</h3>
+    `;
+} else if (q1 === "C" && q2 === "B" && q3 === "A") {
+    recommendations = `
+        <h2>旅行的翼逸<br>負food得正<br>花Happen<br></h2>
+        <h3>實用工具與日常便利</h3>
+    `;
+} else if (q1 === "C" && q2 === "B" && q3 === "B") {
+    recommendations = `
+        <h2>媒人所<br>界限Boundaries<br>JOMO<br></h2>
+        <h3>聚焦社會對話與教育</h3>
+    `;
+} else if (q1 === "C" && q2 === "B" && q3 === "C") {
+    recommendations = `
+        <h2>Co-Sign<br>用進廢退<br>未來領航<br></h2>
+        <h3>未來趨勢與科技創新</h3>
+    `;
+} else if (q1 === "C" && q2 === "B" && q3 === "D") {
+    recommendations = `
+        <h2>時光抱報<br>媒人所<br>界限Boundaries<br></h2>
+        <h3>歷史與社會議題</h3>
+    `;
+} else if (q1 === "C" && q2 === "C" && q3 === "A") {
+        recommendations = `
+        <h2>未來領航<br>JOMO<br>媒人所<br></h2>
+        <h3>技術與教育的未來探索</h3>
+    `;
+} else if (q1 === "C" && q2 === "C" && q3 === "B") {
+        recommendations = `
+        <h2>花Happe<br>旅行的翼逸<br>負food得正<br></h2>
+        <h3>結合教育與生活應用</h3>
+    `;
+} else if (q1 === "C" && q2 === "C" && q3 === "C") {
+        recommendations = `
+        <h2>JOMO<br>媒人所<br>時光抱報<br></h2>
+        <h3>教育、文化與歷史的交融</h3>
+    `;
+} else if (q1 === "C" && q2 === "C" && q3 === "D") {
+        recommendations = `
+        <h2>界限Boundaries<br>Co-Sign<br>媒人所<br></h2>
+        <h3>教育與社會多樣性的議題探索</h3>
+    `;
+} else if (q1 === "C" && q2 === "D" && q3 === "A") {
+        recommendations = `
+        <h2>用進廢退<br>未來領航<br>媒人所<br></h2>
+        <h3>歷史與社會議題</h3>
+    `;
+} else if (q1 === "C" && q2 === "D" && q3 === "B") {
+        recommendations = `
+        <h2>花Happen<br>旅行的翼逸<br>負food得正<br></h2>
+        <h3>日常與教育的實用性</h3>
+    `;
+} else if (q1 === "C" && q2 === "D" && q3 === "C") {
+        recommendations = `
+        <h2>媒人<br>JOMO<br>時光抱報<br></h2>
+        <h3>教育與歷史的融合探索</h3>
+    `;
+} else if (q1 === "C" && q2 === "D" && q3 === "D") {
+        recommendations = `
+        <h2>界限Boundaries<br>Co-Sign<br>媒人所<br></h2>
+        <h3>教育與社會對話的深入討論</h3>
+    `;
+} else if (q1 === "D" && q2 === "A" && q3 === "A") {
+    recommendations = `
+        <h2>未來領航<br>哩豆<br>負food得正<br></h2>
+        <h3>技術與生活便利結合</h3>
+    `;
+} else if (q1 === "D" && q2 === "A" && q3 === "B") {
+    recommendations = `
+        <h2>旅行的翼逸<br>花Happen<br>媒人所<br></h2>
+        <h3>聚焦教育與科技探索</h3>
+    `;
+} else if (q1 === "D" && q2 === "A" && q3 === "C") {
+    recommendations = `
+        <h2>界限Boundaries<br>時光抱報<br>JOMO<br></h2>
+        <h3>歷史與未來技術的連結</h3>
+    `;
+} else if (q1 === "D" && q2 === "A" && q3 === "D") {
+    recommendations = `
+        <h2>用進廢退<br>Co-Sign<br>未來領航<br></h2>
+        <h3>突破性技術與社會創新</h3>
+    `;
+} else if (q1 === "D" && q2 === "B" && q3 === "A") {
+    recommendations = `
+        <h2>花Happen<br>負food得正<br>哩豆<br></h2>
+        <h3>實用與啟發兼具</h3>
+    `;
+} else if (q1 === "D" && q2 === "B" && q3 === "B") {
+    recommendations = `
+        <h2>旅行的翼逸<br>媒人所<br>JOMO<br></h2>
+        <h3>日常與教育的結合</h3>
+    `;
+} else if (q1 === "D" && q2 === "B" && q3 === "C") {
+    recommendations = `
+        <h2>界限Boundaries<br>Co-Sign<br>未來領航<br></h2>
+        <h3>社會與科技趨勢的結合</h3>
+    `;
+} else if (q1 === "D" && q2 === "B" && q3 === "D") {
+    recommendations = `
+        <h2>時光抱報<br>用進廢退<br>媒人所<br></h2>
+        <h3>歷史與未來交織</h3>
+    `;
+} else if (q1 === "D" && q2 === "C" && q3 === "A") {
+        recommendations = `
+        <h2>用進廢退<br>未來領航<br>時光抱報<br></h2>
+        <h3>技術與歷史的未來探索</h3>
+    `;
+} else if (q1 === "D" && q2 === "C" && q3 === "B") {
+        recommendations = `
+        <h2>哩豆<br>負food得正<br>花Happen<br></h2>
+        <h3>技術與日常應用的結合</h3>
+    `;
+} else if (q1 === "D" && q2 === "C" && q3 === "C") {
+        recommendations = `
+        <h2>時光抱報<br>媒人所<br>JOMO<br></h2>
+        <h3>技術、教育與文化的綜合呈現</h3>
+    `;
+} else if (q1 === "D" && q2 === "C" && q3 === "D") {
+        recommendations = `
+        <h2>界限Boundaries<br>Co-Sign<br>用進廢退<br></h2>
+        <h3>技術與社會議題的融合探索</h3>
+    `;
+} else if (q1 === "D" && q2 === "D" && q3 === "A") {
+        recommendations = `
+        <h2>用進廢退<br>未來領航<br>媒人所<br></h2>
+        <h3>技術與未來趨勢的探索</h3>
+    `;
+} else if (q1 === "D" && q2 === "D" && q3 === "B") {
+        recommendations = `
+        <h2>哩豆<br>負food得正<br>花Happen<br></h2>
+        <h3>技術、生活與日常應用的結合</h3>
+    `;
+} else if (q1 === "D" && q2 === "D" && q3 === "C") {
+        recommendations = `
+        <h2>JOMO<br>媒人所<br>時光抱報<br></h2>
+        <h3>技術、教育與文化的創新</h3>
+    `;
+} else if (q1 === "D" && q2 === "D" && q3 === "D") {
+        recommendations = `
+        <h2>界限Boundaries<br>Co-Sign<br>用進廢退<br></h2>
+        <h3>技術與社會議題的綜合探索</h3>
+    `;
+} else {
+    recommendations = `
+        <h2>沒有合適的推薦結果</h2>
+        <h3>請重新選擇</h3>
+    `;
+}
+
+    document.getElementById("results").innerHTML = recommendations;
+  </script>
+</body>
+</html>

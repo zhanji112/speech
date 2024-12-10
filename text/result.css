@@ -1,0 +1,58 @@
+/* 加載本地字型 */
+@font-face {
+  font-family: 'Cubic-11-main'; /* 自定義字型名稱 */
+  src: url('fonts/Cubic_11_1.100_R.woff2') format('woff2'),
+       url('fonts/Cubic_11_1.100_R.woff') format('woff'),
+       url('fonts/Cubic_11_1.100_R.ttf') format('truetype'); /* 多格式支援 */
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 通用樣式 */
+html, body {
+  height: 100%; /* 確保高度覆蓋整個螢幕 */
+  margin: 0;
+  padding: 0;
+  display: flex; /* 使用彈性盒模型 */
+  flex-direction: column; /* 元素按列排列 */
+  justify-content: center; /* 垂直置中 */
+  align-items: center; /* 水平置中 */
+  background-image: url('background.png'); /* 替換為背景圖片路徑 */
+  background-size: cover; /* 確保背景覆蓋整個螢幕 */
+  background-position: center; /* 背景圖片置中 */
+  background-repeat: no-repeat; /* 防止背景重複 */
+  background-attachment: fixed; /* 背景固定不移動 */
+  font-family: 'Cubic-11-main', Arial, sans-serif; /* 自定義字型 */
+}
+
+/* 問題樣式 */
+.question {
+  margin-bottom: 2rem; /* 使用相對單位 */
+  font-size: 1.25rem; /* 使用相對字體大小 */
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* 按鈕樣式 */
+.back-button:active {
+  transform: scale(0.95);
+}
+
+.back-button {
+  width: 250px;
+  height: 150px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.results {
+    text-align: center; /* 置中文字 */
+    margin: 10px auto; /* 自動調整邊距使區塊置中 */
+    width: 100%; /* 控制寬度 */
+    line-height: 1.6; /* 增加行高以提升可讀性 */
+    font-family: 'Cubic-11-main',Arial, sans-serif; /* 選擇合適的字體 */
+}

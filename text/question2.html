@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <br>
+  <br>
+  <br>
+  <br>
+  <title>問題 2</title>
+  <link rel="stylesheet" href="question2.css">
+</head>
+<body>
+  <h1>問題 2</h1>
+  <p class="question">你對本次展覽的期待主要是什麼？</p>
+  <div class="button-container">
+    <a id="btnA" class="btn">A. 親身體驗互動與實用工具</a>
+    <a id="btnB" class="btn">B. 啟發思考、引起社會對話</a>
+    <a id="btnC" class="btn">C. 了解AI如何改變歷史呈現與教育方式</a>
+    <a id="btnD" class="btn">D. 技術突破與未來AI趨勢探索</a>
+  </div>
+
+  <script>
+    // 獲取 URL 中的參數
+    const urlParams = new URLSearchParams(window.location.search);
+    const q1 = urlParams.get('q1'); // 取得 q1 的值
+
+    // 動態更新按鈕的 href
+    if (q1) {
+      document.getElementById('btnA').href = `question3.html?q1=${q1}&q2=A`;
+      document.getElementById('btnB').href = `question3.html?q1=${q1}&q2=B`;
+      document.getElementById('btnC').href = `question3.html?q1=${q1}&q2=C`;
+      document.getElementById('btnD').href = `question3.html?q1=${q1}&q2=D`;
+    } else {
+      alert("缺少 q1 參數，請返回上一頁重新作答。");
+    }
+  </script>
+</body>
+</html>

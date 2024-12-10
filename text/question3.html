@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <br>
+  <br>
+  <br>
+  <br>
+  <title>問題 3</title>
+  <link rel="stylesheet" href="question3.css">
+</head>
+<body>
+  <h1>問題 3</h1>
+  <p class="question">你更傾向探索哪一種主題？</p>
+  <div class="button-container">
+    <a id="btnA" class="btn">A. 科技與未來的結合</a>
+    <a id="btnB" class="btn">B. 生活中的AI應用</a>
+    <a id="btnC" class="btn">C. 教育與文化的創新發展</a>
+    <a id="btnD" class="btn">D. 社會議題與多樣性</a>
+  </div>
+
+  <script>
+    // 獲取 URL 中的參數
+    const urlParams = new URLSearchParams(window.location.search);
+    const q1 = urlParams.get('q1'); // 取得 q1 的值
+    const q2 = urlParams.get('q2'); // 取得 q2 的值
+
+    // 動態更新按鈕的 href
+    if (q1 && q2) {
+      document.getElementById('btnA').href = `result.html?q1=${q1}&q2=${q2}&q3=A`;
+      document.getElementById('btnB').href = `result.html?q1=${q1}&q2=${q2}&q3=B`;
+      document.getElementById('btnC').href = `result.html?q1=${q1}&q2=${q2}&q3=C`;
+      document.getElementById('btnD').href = `result.html?q1=${q1}&q2=${q2}&q3=D`;
+    } else {
+      alert("缺少 q1 或 q2 參數，請返回上一頁重新作答。");
+    }
+  </script>
+</body>
+</html>
